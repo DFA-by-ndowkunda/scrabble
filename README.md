@@ -13,12 +13,12 @@ Welcome to the Scrabble challenge!
 $ git clone && cd scrabble-challenge
 $ npm install # installs dependencies listed in package.json
 ```
-2. Run the tests from your project root directory. There should be a lot of failures to begin with.
+2. Run the tests from your project root directory. There should be a lot of failures to begin with. You can run your test suite in a few ways:
 ```sh
-$ ./node_modules/jasmine/bin/jasmine.js
-
-# or if you have installed jasmine globally
+$ npm test # or
 $ jasmine
+# or run jasmine directly
+$ ./node_modules/jasmine/bin/jasmine.js
 ```
 3. In GitHub, [open a Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) from your forked repository to the challenge repository.
 4. Implement the criteria below locally and [push your code](https://docs.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line) to your repository! Every push to a branch that has an open Pull Request will update it automatically with your changes.
@@ -26,35 +26,7 @@ $ jasmine
 
 # Task
 
-Given a word, compute the scrabble score for that word. Each `Scrabble` method should be no more than 5 lines and contain no more than 5 operations.
-
-## Acceptance Criteria
-
-```javascript
-let scrabble = new Scrabble('')
-scrabble.score() // => 0
-
-let scrabble = new Scrabble(" \t\n")
-scrabble.score() // => 0
-
-let scrabble = new Scrabble(null)
-scrabble.score() // => 0
-
-let scrabble = new Scrabble('a')
-scrabble.score() // => 1
-
-let scrabble = new Scrabble('f')
-scrabble.score() // => 4
-
-let scrabble = new Scrabble('street')
-scrabble.score() // => 6
-
-let scrabble = new Scrabble('quirky')
-scrabble.score() // => 22
-
-let scrabble = new Scrabble('OXYPHENBUTAZONE')
-scrabble.score() // => 41
-```
+Given a word, compute the scrabble score for that word.
 
 ##### Letter Values
 
@@ -87,7 +59,37 @@ And to total:
 = 14
 ```
 
-##### Further work
+## Acceptance Criteria
+
+```javascript
+let scrabble = new Scrabble('')
+scrabble.score() // => 0
+
+let scrabble = new Scrabble(" \t\n")
+scrabble.score() // => 0
+
+let scrabble = new Scrabble(null)
+scrabble.score() // => 0
+
+let scrabble = new Scrabble('a')
+scrabble.score() // => 1
+
+let scrabble = new Scrabble('f')
+scrabble.score() // => 4
+
+let scrabble = new Scrabble('street')
+scrabble.score() // => 6
+
+let scrabble = new Scrabble('quirky')
+scrabble.score() // => 22
+
+let scrabble = new Scrabble('OXYPHENBUTAZONE')
+scrabble.score() // => 41
+```
+
+## Extended Acceptance Criteria
+> Each `Scrabble` method should be no more than 5 lines and contain no more than 5 operations.
+
 > You can play a double or a triple letter.
 
 > You can play a double or a triple word.

@@ -48,3 +48,4 @@ scrabbleScores.forEach(score => {
    return sum += parseInt(score);
 })
 console.log(sum);
+
