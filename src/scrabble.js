@@ -1,4 +1,7 @@
 // Write your implementation here
+let checkWord = isWord('quirky');
+let scrabbleWord = sortLetters();
+let sum = 0;
 let letterScores = {
       "A": 1,
       "E": 1,
@@ -30,22 +33,23 @@ let letterScores = {
 function isWord(word) {
     return word = word || '0'
 };
-let checkWord = isWord('quirky');
+
 function sortLetters() {
   let letters = checkWord.toUpperCase().split("");
   return letters
 };
-let scrabbleWord = sortLetters();
-const scrabbleScores = scrabbleWord.map(letter => {
-  if (typeof letterScores[letter] === 'number') {
-    return letterScores[letter]
-  } else {
-    return 0 
-  }
-})
-let sum = 0;
-scrabbleScores.forEach(score => {
-   return sum += parseInt(score);
-})
-console.log(sum);
+  const scores = scrabbleWord.map(letter => {
+    if (typeof letterScores[letter] === 'number') {
+      return letterScores[letter]
+    } else {
+      return 0
+    }
+  });
 
+function score(){
+  for (let i = 0; i < scores.length; i++){
+    sum += (scores[i]);
+  };
+  return sum
+}
+console.log(score());
