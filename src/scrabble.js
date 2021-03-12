@@ -1,8 +1,8 @@
 // Write your implementation here
-let checkWord = isWord('quirky');
-let scrabbleWord = sortLetters();
-let sum = 0;
-let letterScores = {
+class Scrabble {
+  constructor(word) {
+    this.word = word;
+    this.letterScores = {
       "A": 1,
       "E": 1,
       "I": 1,
@@ -29,11 +29,59 @@ let letterScores = {
       "X": 8,
       "Q": 10,
       "Z": 10
-};
+    }
+  }
+  score() {
+    this.word = this.word || '0';
+    let totalScore = 0;
+    let letters = this.word.toUpperCase().split("");
+    const scores = letters.map(letter => {
+      return typeof this.letterScores[letter] === 'number' ? this.letterScores[letter] : 0;
+    })
+   scores.forEach(score => {
+      totalScore += score;
+    })
+   return totalScore
+  }
+  }
+module.exports = Scrabble
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+  }
+let checkWord = isWord();
+let scrabbleWord = sortLetters();
+let sum = 0;
+
+/*
 function isWord(word) {
     return word = word || '0'
 };
-
+*/
+/*
 function sortLetters() {
   let letters = checkWord.toUpperCase().split("");
   return letters
@@ -45,7 +93,8 @@ function sortLetters() {
       return 0
     }
   });
-
+*/
+/*
 function score(){
   for (let i = 0; i < scores.length; i++){
     sum += (scores[i]);
@@ -53,3 +102,4 @@ function score(){
   return sum
 }
 console.log(score());
+*/
